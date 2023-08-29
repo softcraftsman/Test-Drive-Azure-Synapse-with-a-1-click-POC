@@ -1,0 +1,33 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"workspaceName": {
+			"value": "fxug5sip3bk4dpwypocws1"
+		},
+		"TripFaresSynapseAnalyticsLinkedService_connectionString": {
+			"value": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=@{linkedService().SynapseWorkspaceName};Initial Catalog=@{linkedService().SQLDedicatedPoolName};User ID=@{linkedService().SQLLoginUsername}"
+		},
+		"fxug5sip3bk4dpwypocws1-WorkspaceDefaultSqlServer_connectionString": {
+			"value": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=tcp:fxug5sip3bk4dpwypocws1.sql.azuresynapse.net,1433;Initial Catalog=@{linkedService().DBName}"
+		},
+		"HttpServerTripDataLinkedService_properties_typeProperties_url": {
+			"value": "https://raw.githubusercontent.com/Azure/Test-Drive-Azure-Synapse-with-a-1-click-POC/main/tripDataAndFaresCSV/trip-data.csv"
+		},
+		"HttpServerTripFareDataLinkedService_properties_typeProperties_url": {
+			"value": "https://raw.githubusercontent.com/Azure/Test-Drive-Azure-Synapse-with-a-1-click-POC/main/tripDataAndFaresCSV/fares-data.csv"
+		},
+		"TripFaresDataLakeStorageLinkedService_properties_typeProperties_url": {
+			"value": "@{concat('https://',linkedService().datalakeAccountName,'.dfs.core.windows.net')}"
+		},
+		"fauxunihealth_properties_typeProperties_url": {
+			"value": "https://fauxunihealth.dfs.core.windows.net/"
+		},
+		"fxug5sip3bk4dpwypocws1-WorkspaceDefaultStorage_properties_typeProperties_url": {
+			"value": "https://fxug5sip3bk4dpwypoc.dfs.core.windows.net/"
+		},
+		"keyVaultLinkedservice_properties_typeProperties_baseUrl": {
+			"value": "@{concat('https://',linkedService().keyVaultName,'.vault.azure.net/')}"
+		}
+	}
+}
