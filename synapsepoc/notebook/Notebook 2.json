@@ -13,7 +13,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "6bef6708-17b5-4fa2-abe6-3ee1da755bac"
+				"spark.autotune.trackingId": "3d718cdb-39a5-4678-9b6f-d063f6d342fd"
 			}
 		},
 		"metadata": {
@@ -31,6 +31,11 @@
 		"cells": [
 			{
 				"cell_type": "code",
+				"metadata": {
+					"microsoft": {
+						"language": "python"
+					}
+				},
 				"source": [
 					"%%pyspark\n",
 					"spark.sql(\"CREATE TABLE IF NOT EXISTS default.YourTableName USING Parquet LOCATION 'YourFilePath'\")"
