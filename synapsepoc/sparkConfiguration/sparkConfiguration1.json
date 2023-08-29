@@ -1,0 +1,14 @@
+{
+	"name": "sparkConfiguration1",
+	"properties": {
+		"configs": {
+			"spark.acls.enable": "false"
+		},
+		"created": "2023-08-29T16:04:32.5020000-04:00",
+		"createdBy": "john@fauxuni.com",
+		"annotations": [],
+		"configMergeRule": {
+			"artifact.currentOperation.spark.acls.enable": "replace"
+		}
+	}
+}
